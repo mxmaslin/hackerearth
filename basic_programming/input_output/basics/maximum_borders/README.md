@@ -109,4 +109,4 @@ Print the maximum border of the shapes.
 | #####. | |  
 | ####.. | |  
 
-[**solution**](maximum_borders.py)
+[**Solution**](maximum_borders.py)
