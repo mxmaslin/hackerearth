@@ -1,12 +1,7 @@
-import sys
-
-sys.stdin = open('data.txt')
-
-
 def chunks(lst, step):
     i = 0
     while i < lst_len:
-        if i + step > lst_len:
+        if step > len(lst[i:i+step]):
             break
         yield lst[i:i+step]
         i += step
@@ -26,4 +21,5 @@ def find_max(lst, step):
 
 lst_len = int(input())
 lst = [int(x) for x in input().split()]
+
 print(find_max(lst, 1))
