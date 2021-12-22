@@ -1,21 +1,21 @@
 def chunks(lst, step):
+    ixs = []
     i = 0
     while i < lst_len:
         if step > len(lst[i:i+step]):
             break
-        yield lst[i:i+step]
+        ixs.extend(lst[i:i+step])
         i += step
         step += 1
+    return ixs
 
 
 def find_max(lst, step):
     max_ = 0
     for i in range(lst_len):
-        l = []
-        for x in chunks(lst[i:], step):
-            l.extend(x)
-        if sum(l) > max_:
-            max_ = sum(l)
+        sum_ = sum(chunks(lst[i:], step))
+        if sum_ > max_:
+            max_ = sum_
     return max_
 
 
