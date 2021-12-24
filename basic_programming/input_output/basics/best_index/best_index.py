@@ -1,4 +1,8 @@
-def sum_line(lst, step):
+import sys
+sys.stdin = open('data.txt')
+
+
+def row_max(lst, step):
     ixs = []
     i = 0
     while i < lst_len:
@@ -7,15 +11,14 @@ def sum_line(lst, step):
         ixs.extend(lst[i:i+step])
         i += step
         step += 1
-    return sum(x for x in ixs)
+    return sum(ixs)
 
 
 def find_max(lst, step):
     max_ = 0
     for i in range(lst_len):
-        sum_ = sum_line(lst[i:], step)
-        if sum_ > max_:
-            max_ = sum_
+        sum_ = row_max(lst[i:], step)
+        max_ = max(sum_, max_)
     return max_
 
 
